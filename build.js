@@ -65,7 +65,21 @@ var releases = {
 			'default/handleEvent.js',
 		],
 		postProcessing: [ 'wheel/build.json', 'snap/build.json', 'keys/build.json', 'infinite/build.json', 'probe/build.json' ]
-	}
+	},
+  
+  zoomAndProbe: {
+    files: [
+      'indicator/_initIndicators.js',
+      'zoom/zoom.js',
+      'wheel/wheel.js',
+      'snap/snap.js',
+      'keys/keys.js',
+      'probe/_animate.js',
+      'zoom/handleEvent.js',
+      'indicator/indicator.js'
+    ],
+		postProcessing: [ 'zoom/build.json', 'indicator/build.json', 'wheel/build.json', 'snap/build.json', 'keys/build.json', 'probe/build.json' ]
+  }
 };
 
 var args = process.argv.slice(2);
@@ -75,7 +89,7 @@ if ( !args.length ) {
 }
 
 if ( args[0] == 'dist' ) {
-	args = ['lite', 'iscroll', 'zoom', 'probe', 'infinite'];
+	args = ['lite', 'iscroll', 'zoom', 'probe', 'infinite', 'zoomAndProbe'];
 }
 
 // Get the list of files
